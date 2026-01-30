@@ -33,7 +33,7 @@ for device in devmgr.devices:
 
     for line in UDEV:
         if pid_upper != pid_lower and line.find(pid_upper) > 0:
-            print(f"Warning: Found uppercase pid {pid_upper} in 99-razer.rules, should be lowercase!")
+            print(f"Warning: Found uppercase pid {pid_upper} in 71-razer.rules, should be lowercase!")
         if line.find(pid_lower) > 0:
             found_udev = True
             break
@@ -43,7 +43,7 @@ for device in devmgr.devices:
         passed = False
 
     if not found_udev:
-        print(f"\nMissing from 99-razer.rules: {device.name} ({pid_lower})")
+        print(f"\nMissing from 71-razer.rules: {device.name} ({pid_lower})")
         passed = False
 
 if not passed:

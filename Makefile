@@ -108,7 +108,7 @@ remove_dkms:
 udev_install:
 	@echo -e "\n::\033[34m Installing OpenRazer udev rules\033[0m"
 	@echo "====================================================="
-	install -m 644 -v -D install_files/udev/99-razer.rules $(DESTDIR)$(UDEV_PREFIX)/lib/udev/rules.d/99-razer.rules
+	install -m 644 -v -D install_files/udev/71-razer.rules $(DESTDIR)$(UDEV_PREFIX)/lib/udev/rules.d/71-razer.rules
 	install -m 755 -v -D install_files/udev/razer_mount $(DESTDIR)$(UDEV_PREFIX)/lib/udev/razer_mount
 
 appstream_install:
