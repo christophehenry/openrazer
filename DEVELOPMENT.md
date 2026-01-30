@@ -26,7 +26,7 @@ Basic steps though, are:
 <br> e.g. for the previous device: `#define USB_DEVICE_ID_RAZER_STRIDER_CHROMA 0x0C05`
 <br> (Note: *keep using the correct order while defining or using VIDs or PIDs, as mentioned above*)
 5. Go to `driver/razer[device_type]_driver.c` and add support in the kernel driver for the device. Here you can provide functionality to communicate with the USB device, manage its features & effects, and expose device-specific attributes through sysfs.
-6. Last (but not least) navigate to: `install_files/udev/99-razer.rules` to append the device's PID (always in correct order - as we said), in the correct ruleset.
+6. Last (but not least) navigate to: `install_files/udev/71-razer.rules` to append the device's PID (always in correct order - as we said), in the correct ruleset.
 7. Run: `./scripts/format_source.sh` in case you have any linting issues.
 8. Run: `./scripts/generate_appstream_file.sh` to generate the `install_files/appstream/io.github.openrazer.openrazer.metainfo.xml`
 9. Run: `./scripts/generate_all_fake_drivers.sh -f` to generate `pylib/openrazer/_fake_driver/*.cfg`
