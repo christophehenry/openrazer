@@ -233,6 +233,11 @@ static ssize_t razer_attr_read_device_type(struct device *dev, struct device_att
         device_type = "Razer Tomahawk ATX";
         break;
 
+
+    case USB_DEVICE_ID_RAZER_LAPTOP_COOLING_PAD:
+        device_type = "Razer Laptop Cooling Pad";
+        break;
+
     default:
         device_type = "Unknown Device";
         break;
@@ -2379,6 +2384,7 @@ static int razer_accessory_probe(struct hid_device *hdev, const struct hid_devic
     case USB_DEVICE_ID_RAZER_CHARGING_PAD_CHROMA:
     case USB_DEVICE_ID_RAZER_RAPTOR_27:
     case USB_DEVICE_ID_RAZER_CHROMA_ADDRESSABLE_RGB_CONTROLLER:
+    case USB_DEVICE_ID_RAZER_LAPTOP_COOLING_PAD:
         expected_protocol = 0;
         break;
 
@@ -2491,6 +2497,7 @@ static int razer_accessory_probe(struct hid_device *hdev, const struct hid_devic
         case USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA_V2:
         case USB_DEVICE_ID_RAZER_LIANLI_O11_DYNAMIC:
         case USB_DEVICE_ID_RAZER_TOMAHAWK_ATX:
+        case USB_DEVICE_ID_RAZER_LAPTOP_COOLING_PAD:
             CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_matrix_effect_spectrum);            // Spectrum effect
             break;
         }
@@ -2519,6 +2526,7 @@ static int razer_accessory_probe(struct hid_device *hdev, const struct hid_devic
         case USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA_V2:
         case USB_DEVICE_ID_RAZER_LIANLI_O11_DYNAMIC:
         case USB_DEVICE_ID_RAZER_TOMAHAWK_ATX:
+        case USB_DEVICE_ID_RAZER_LAPTOP_COOLING_PAD:
             CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_matrix_effect_wave);                // Wave effect
             break;
         }
@@ -2551,6 +2559,7 @@ static int razer_accessory_probe(struct hid_device *hdev, const struct hid_devic
         case USB_DEVICE_ID_RAZER_KRAKEN_KITTY_EDITION:
         case USB_DEVICE_ID_RAZER_THUNDERBOLT_4_DOCK_CHROMA:
         case USB_DEVICE_ID_RAZER_CORE_X_CHROMA:
+        case USB_DEVICE_ID_RAZER_LAPTOP_COOLING_PAD:
             CREATE_DEVICE_FILE(&hdev->dev, &dev_attr_matrix_effect_starlight);
             break;
         }
@@ -2869,6 +2878,7 @@ static const struct hid_device_id razer_devices[] = {
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_LAPTOP_STAND_CHROMA_V2) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_LIANLI_O11_DYNAMIC) },
     { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_TOMAHAWK_ATX) },
+    { HID_USB_DEVICE(USB_VENDOR_ID_RAZER,USB_DEVICE_ID_RAZER_LAPTOP_COOLING_PAD) },
     { 0 }
 };
 
